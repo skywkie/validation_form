@@ -1,0 +1,28 @@
+.svg {
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   width: 80px;
+   height: 80px;
+   border: 2px solid white;
+   border-radius: 100%;
+   cursor: pointer;
+   z-index: 1;
+}
+#top-line,
+#bottom-line,
+#middle-line {
+   transform-box: fill-box;
+   transform-origin: center;
+}
+.svg:hover {
+   #top-line {
+      animation: down-rotate 0.6s ease-out both;
+   }
+   #bottom-line {
+      animation: up-rotate 0.6s ease-out both;
+   }
+   #middle-line {
+      animation: hide 0.6s ease-out forwards;
+   }
+}
