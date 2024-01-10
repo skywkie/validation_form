@@ -1,13 +1,15 @@
 import { PersonsList } from "./PersonData";
 
-const PersonItem: any = (): any => {
+const PersonItem: React.FC = (): JSX.Element => {
    // ОНО РАБОТАЕТ!!!!!!!!!!!!!!!!!!!!
    function showPersonsInfo() {
-      const personIcon: any = [];
+      const personIcon: JSX.Element[] = [];
       for (let person in PersonsList) {
          personIcon.push(
             <tr>
-               <td>{PersonsList[person].icon}</td>
+               <td>
+                  <img src={PersonsList[person].icon} alt="" />
+               </td>
                <td>{PersonsList[person].name}</td>
                <td>{PersonsList[person].Rarity}</td>
                <td>{PersonsList[person].Element}</td>

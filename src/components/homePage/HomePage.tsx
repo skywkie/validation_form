@@ -1,4 +1,3 @@
-import path from "path";
 import BurgerMenu from "../burgerMenu/BurgerMenu";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
