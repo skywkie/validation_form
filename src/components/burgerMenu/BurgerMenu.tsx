@@ -2,14 +2,13 @@ import "./BurgerMenu.css";
 import { useState } from "react";
 import SideBar from "../sidebar/SideBar";
 
-const BurgerMenu = () => {
+const BurgerMenu: React.FC = (): JSX.Element => {
    const [show, setShow] = useState(false);
-   console.log(show);
    return (
       <>
          <svg
-            id="hamburger"
-            className="svg"
+            id="burger-menu"
+            className={show ? "svg clicked" : "svg"}
             viewBox="0 0 60 40"
             onClick={() => setShow(!show)}
          >
@@ -24,7 +23,7 @@ const BurgerMenu = () => {
                <path id="bottom-line" d="M10,30 L50,30 Z"></path>
             </g>
          </svg>
-         <SideBar status={show} />
+         <SideBar status={show} setStatus={setShow} />
       </>
    );
 };

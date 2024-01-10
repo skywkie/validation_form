@@ -1,19 +1,39 @@
 import { Link } from "react-router-dom";
 import "./SideBar.css";
 
-const SideBar = ({ status }: any) => {
+type SideBarProps = {
+   status: boolean;
+   setStatus: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const SideBar: React.FC<SideBarProps> = ({
+   status,
+   setStatus,
+}: SideBarProps): JSX.Element => {
    return (
       <section id={status ? "sidebar-open" : "sidebar"}>
-         <h1>Меню</h1>
+         <h1 className="sidebar-title">Menu</h1>
          <div className="list">
-            <Link className="list-element" to={"/login"}>
-               Вход
+            <Link
+               onClick={(status) => setStatus(!status)}
+               className="list-element"
+               to={"/login"}
+            >
+               Sing In
             </Link>
-            <Link className="list-element" to={"/"}>
-               Регистрация
+            <Link
+               onClick={(status) => setStatus(!status)}
+               className="list-element"
+               to={"/"}
+            >
+               Sing Up
             </Link>
-            <Link className="list-element" to={"/main"}>
-               Главное меню
+            <Link
+               onClick={(status) => setStatus(!status)}
+               className="list-element"
+               to={"/main"}
+            >
+               Home page
             </Link>
          </div>
       </section>
