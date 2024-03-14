@@ -10,7 +10,7 @@ import Genshin from "./components/homePage/genshin/Genshin";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
-   // <App/>
+   // <Роутинг/>
    <BrowserRouter>
       <Routes>
          <Route path="/" element={<App />} />
